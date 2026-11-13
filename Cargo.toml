@@ -1,0 +1,25 @@
+[package]
+name = "fontspector-fontgarden"
+version = "0.1.0"
+edition = "2024"
+description = "Fontspector plugin with the Font.Garden profile"
+license = "Apache-2.0"
+repository = "https://github.com/fontgarden/fontspector-fontgarden"
+publish = false
+
+[lib]
+name = "fontspector_fontgarden"
+
+[[bin]]
+name = "fontgarden-fontspectorplugin"
+path = "src/main.rs"
+
+[dependencies]
+fontspector-checkapi = { git = "https://github.com/fonttools/fontspector", tag = "fontspector-v1.9.0" }
+serde_json = "1.0"
+skrifa = "0.46"
+
+[features]
+# The check macro of fontspector-checkapi tests this feature. This plugin
+# has no source fixes.
+sourcefix = []
